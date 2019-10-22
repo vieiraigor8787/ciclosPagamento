@@ -15,7 +15,7 @@ class BillingCycle extends Component {
 
     componentWillMount() {
         this.props.selectTab('tabList')
-        this.props.showTabs('tablist', 'tabCreate')
+        this.props.showTabs('tabList', 'tabUpdate')
     }
 
     render() {
