@@ -10,35 +10,35 @@ import TabContent from '../common/tab/tabContent';
 
 class BillingCycle extends Component {
     render() {
-        return (
-            <div>
-                <ContentHeader title='Ciclos de pagamentos' small='Cadastro' />
-                <Content>
-                    <Tabs>
-                        <TabsHeader>
-                            <TabHeader label='Listar' icon='bars' target='tabList'/>
-                            <TabHeader label='Incluir' icon='plus' target='tabCreate'/>
-                            <TabHeader label='Alterar' icon='pencil' target='tabUpdate'/>
-                            <TabHeader label='Excluir' icon='trash-o' target='tabDelete'/>
-                        </TabsHeader>
-                        <TabsContent>
-                            <TabContent id='tabList'>
-                                <h1>Listar</h1>
-                            </TabContent>
-                            <TabContent id='tabCreate'>
-                                <h1>Incluir</h1>
-                            </TabContent>
-                            <TabContent id='tabUpdate'>
-                                <h1>Alterar</h1>
-                            </TabContent>
-                            <TabContent id='tabDelete'>
-                                <h1>Excluir</h1>
-                            </TabContent>
-                        </TabsContent>
-                    </Tabs>
-                </Content>
-            </div>
-        )
+      return (
+        <div>
+            <ContentHeader title='Ciclos de pagamentos' small='Cadastro' />
+            <Content>
+                <Tabs>
+                  <TabsHeader>
+                    <TabHeader label='Listar' icon='bars' target='tabList'/>
+                    <TabHeader label='Incluir' icon='plus' target='tabCreate'/>
+                    <TabHeader label='Alterar' icon='pencil' target='tabUpdate'/>
+                    <TabHeader label='Excluir' icon='trash-o' target='tabDelete'/>
+                  </TabsHeader>
+                  <TabsContent>
+                    <TabContent id='tabList'>
+                        <h1>Listar</h1>
+                    </TabContent>
+                    <TabContent id='tabCreate'>
+                        <h1>Incluir</h1>
+                    </TabContent>
+                    <TabContent id='tabUpdate'>
+                        <h1>Alterar</h1>
+                    </TabContent>
+                    <TabContent id='tabDelete'>
+                        <h1>Excluir</h1>
+                    </TabContent>
+                  </TabsContent>
+                </Tabs>
+            </Content>
+        </div>
+      )
     }
 }
 
