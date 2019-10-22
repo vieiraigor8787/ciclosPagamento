@@ -39,6 +39,6 @@ export function showUpdate(billingCycle) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
-        initialize('billingCycleForm', destroy billingCycle)
+        initialize('billingCycleForm', billingCycle)
     ]
 }
