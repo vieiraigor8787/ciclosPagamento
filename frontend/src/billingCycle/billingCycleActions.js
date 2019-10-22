@@ -33,3 +33,11 @@ export function create(values) {
         })
     }
 }
+
+export function showUpdate(billingCycle) {
+    //multi
+    return [
+        showTabs('tabUpdate'),
+        selectTab('tabUpdate')
+    ]
+}
