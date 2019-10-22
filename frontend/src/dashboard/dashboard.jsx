@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 
 import ContentHeader from '../common/template/contentHeader';
 import Content from '../common/template/content';
@@ -46,4 +46,3 @@ const mapStateToProps = state => ({
   summary: state.dashboard.summary
 });
 export default connect(mapStateToProps)(Dashboard)
-export default Dashboard
