@@ -1,7 +1,10 @@
 import React from 'react';
+import '../common/template/dependences';
+
+import Header from '../common/template/header';
 
 export default props => (
     <div className="wrapper">
-        <h1>Tessstando</h1>
+        <Header />
     </div>
 )
