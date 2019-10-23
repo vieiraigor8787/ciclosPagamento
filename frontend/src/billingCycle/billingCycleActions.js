@@ -20,8 +20,11 @@ export function create(values) {
 }
 
 export function update(values) {
-    // console.log(values)
     return submit(values, 'put')
+}
+
+export function remove(values) {
+    return submit(values, 'delete')
 }
 
 function submit(values, method) {
@@ -45,6 +48,15 @@ export function showUpdate(billingCycle) {
     return [
         showTabs('tabUpdate'),
         selectTab('tabUpdate'),
+        initialize('billingCycleForm', billingCycle)
+    ]
+}
+
+export function showDelete(billingCycle) {
+    //multi
+    return [
+        showTabs('tabDelete'),
+        selectTab('tabDelete'),
         initialize('billingCycleForm', billingCycle)
     ]
 }
