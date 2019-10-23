@@ -7,7 +7,9 @@ class CreditList extends Component {
     renderRows() {
         return (
             <tr>
-                <td><Field name='~~' component='input'/></td>
+                <td><Field name='credits[0].name' component='input'/></td>
+                <td><Field name='credits[0].value' component='input'/></td>
+
             </tr>
         )
     }
