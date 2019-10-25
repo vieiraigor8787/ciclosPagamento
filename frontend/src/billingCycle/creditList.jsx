@@ -24,6 +24,9 @@ class CreditList extends Component {
                     <button className="btn btn-success" type='button' onClick={() => this.add(index + 1)}>
                         <i className="fa fa-plus"></i>
                     </button>
+                    <button className="btn btn-warning" type='button' onClick={() => this.add(index + 1, item)}>
+                        <i className="fa fa-clone"></i>
+                    </button>
                 </td>
             </tr>
         ))
