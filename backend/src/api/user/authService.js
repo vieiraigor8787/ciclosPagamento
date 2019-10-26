@@ -13,7 +13,7 @@ const sendErrorsFromDB = (res, dbErrors) => {
     return res.status(400).json({ errors })
 }
 // login 
-const login = (req, res) => {
+const login = (req, res, next) => {
     const email = req.body.email || ''
     const password = req.body.password || ''
     //obter um unico usuário através do email
@@ -32,7 +32,7 @@ const login = (req, res) => {
     })
 }
 // validar token 
-const validateToken = (req, res) => {
+const validateToken = (req, res, next) => {
     const token = req.body.token || ''
 
     jwt.verify(token, env.authSecret, function(err, decoded) {
