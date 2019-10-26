@@ -31,3 +31,12 @@ const login = (req, res) => {
         }
     })
 }
+
+const validateToken = (req, res) => {
+    const token = req.body.token || ''
+
+    jwt.verify(token, env.authSecret, function(err, decoded) {
+        return res.status(200).send({valid: !err})
+    })
+}
+  
