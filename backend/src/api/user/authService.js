@@ -12,7 +12,7 @@ const sendErrorsFromDB = (res, dbErrors) => {
     _.forIn(dbErrors.errors, error => errors.push(error.message))
     return res.status(400).json({ errors })
 }
-
+// login 
 const login = (req, res) => {
     const email = req.body.email || ''
     const password = req.body.password || ''
@@ -31,7 +31,7 @@ const login = (req, res) => {
         }
     })
 }
-
+// validar token 
 const validateToken = (req, res) => {
     const token = req.body.token || ''
 
@@ -39,4 +39,55 @@ const validateToken = (req, res) => {
         return res.status(200).send({valid: !err})
     })
 }
+// signup 
+const signup = (req, res, next) => {
+    const name = req.body.name || ''
+    const email = req.body.email || ''
+    const password = req.body.password || ''
+    const confirmPassword = req.body.confirm_password || ''
+    // validando email 
+    if (!email.match(emailRegex)) {
+        return res.status(400).send({errors: ['O e-mail informa está inválido']})
+    }
+    // validando a senha 
+    if (!password.match(passwordRegex)) {
+        return res.status(400).send({
+            errors: [
+                "Senha precisar ter: uma letra maiúscula, uma letra minúscula, um número, uma caractere especial(@#$%) e tamanho entre 6-20."
+            ]
+        })
+    }
+    // comparando senha de login com senha cadastrada
+    const salt = bcrypt.genSaltSync()
+    const passwordHash = bcrypt.hashSync(password, salt)
+    if (!bcrypt.compareSync(confirmPassword, passwordHash)) {
+        return res.status(400).send({
+            errors: [
+                'Senhas não conferem.'
+            ]
+        })
+    }
+    // verificando usuário existente -> cadastrando novo usuário 
+    User.findOne({email}, (err, user) => {
+    if (err) {
+        return sendErrorsFromDB(res, err)
+    } else if (user) {
+        return res.status(400).send({errors: ['Usuário já cadastrado.']})
+    } else {
+        const newUser = new User({ 
+            name, 
+            email, 
+            password: passwordHash 
+        })
+        newUser.save(err => {
+            if (err) {
+                return sendErrorsFromDB(res, err)
+            } else {
+                login(req, res, next)
+            }
+        })
+    }
+    })
+}
+  
   
