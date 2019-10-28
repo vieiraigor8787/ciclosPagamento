@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Redirect, hashHistory, IndexRoute } from 'react-router';
+import { Route, Redirect, Switch } from 'react-router';
 
 import AuthOrApp from './authOrApp';
 import Dash from '../dashboard/dashboard';
@@ -7,11 +7,11 @@ import Dash from '../dashboard/dashboard';
 import Bill from '../billingCycle/billingCycle';
 
 export default props => (
-    <Router history={hashHistory}>
-        <Route path='/' component={AuthOrApp}>
-            <IndexRoute component={Dash} />
-            <Route path='billingCycles' component={Bill} />
-        </Route>
-        <Redirect from='*' to='/' exact/>
-    </Router>
+   <div className="content-wrapper">
+       <Switch>
+           <Route exact path='/' component={Dash} />
+           <Route path='/billingCycle' component={Bill} />
+           <Redirect from='*' to='/' />
+       </Switch>
+   </div>
 )
