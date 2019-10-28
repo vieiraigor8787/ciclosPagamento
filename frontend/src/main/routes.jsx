@@ -1,7 +1,6 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 
-import AuthOrApp from './authOrApp';
 import Dash from '../dashboard/dashboard';
 // import Dashboard2 from '../dashboard2/dashboard2';
 import Bill from '../billingCycle/billingCycle';
