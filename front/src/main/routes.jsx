@@ -9,8 +9,8 @@ import Bill from '../billingCycle/billingCycle';
 export default props => (
     <div className='content-wrapper'>
         <Switch>
-            <Route exact path='/' component={Dashboard} />
-            <Route path='/billingCycles' component={BillingCycle} />
+            <Route exact path='/' component={Dash} />
+            <Route path='/billingCycles' component={Bill} />
             <Redirect from='*' to='/' />
         </Switch>
     </div>

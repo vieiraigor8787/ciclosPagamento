@@ -10,7 +10,7 @@ export default props => (
     <div className="wrapper">
         <Header />
         <Sidebar />
-        <Routes />
+        <HashRouter />
         <Footer />
         <Messages />
     </div>
