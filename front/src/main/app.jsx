@@ -6,8 +6,6 @@ import Sidebar from '../common/template/sidebar';
 import Footer from '../common/template/footer';
 import Messages from '../common/msg/msgs';
 
-import Routes from './reducers'
-
 export default props => (
     <HashRouter>
     <div className="wrapper">
