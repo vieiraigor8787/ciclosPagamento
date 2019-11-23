@@ -6,12 +6,14 @@ import Sidebar from '../common/template/sidebar';
 import Footer from '../common/template/footer';
 import Messages from '../common/msg/msgs';
 
+import Routes from './routes';
+
 export default props => (
     <HashRouter>
     <div className="wrapper">
         <Header />
         <Sidebar />
-        <HashRouter />
+        <Routes />
         <Footer />
         <Messages />
     </div>
